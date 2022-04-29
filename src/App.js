@@ -3,6 +3,7 @@ import WelcomePage from "./screens/WelcomePage/WelcomePage"
 import Login from "./screens/Login/Login";
 import HomePage from "./screens/HomePage/HomePage"
 import NotFound from "./components/NotFound";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
       <Routes>
         <Route path="/" element ={<WelcomePage/>}/>
         <Route path="/login" element ={<Login/>}/>
-        <Route path="/HomePage" element ={<HomePage/>}/>
+
+        <Route  element={<ProtectedRoutes/>}>
+          <Route path="/homepage" element={<HomePage/>}/>
+        </Route>
+
         <Route path="*" element={<NotFound/>}/>
 
 
