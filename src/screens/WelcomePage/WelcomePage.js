@@ -6,7 +6,7 @@ export default function WelcomePage() {
     <div className='welcomePageImg'>
 
       <div className='btnContainer'>
-        <button className='loginBtn'>LOGIN</button>
+        <button >LOGIN</button>
       </div>
         
         
