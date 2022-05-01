@@ -37,25 +37,7 @@
     
 }
 
-.loginBtn{
-    background-color: rgb(9, 35, 141);
-    height: 60px;
-    width: 90px;
-    color: rgb(250, 253, 253);
-    margin: 10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-size: 20px;
 
-}
-.loginBtn:hover{
-    background-color: rgb(47, 69, 160);
-}
-.loginBtn:active{
-    background-color: rgb(8, 31, 122);
-
-}
 
 .btnContainer{
     display: flex;
