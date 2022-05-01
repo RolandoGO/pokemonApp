@@ -1,0 +1,37 @@
+.loginWrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(224, 228, 18);
+    position: relative;
+    
+    
+}
+
+.loginForm{
+
+    background-color: rgb(77, 66, 177);
+    border-radius: 5px;
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    
+   
+}
+
+@media only screen and (max-width: 400px) {
+
+    .loginForm{
+        height: 300px;
+        width: 250px;
+    }
+    
+}
+@media only screen and (min-width: 400px) {
+    .loginForm{
+        height: 350px;
+        width: 300px;
+    }
+  }
