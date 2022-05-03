@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
+import { authContext } from '../components/context/authContext';
 
-const auth = true
-// cuando se cree el login se usara el dato del usuario en vez del boolean anterior.
-//const isAuth = window.localStorage.usuario
+
 
 export default function ProtectedRoutes() {
    
+   const {userAuth:auth} = useContext(authContext)
+
    return auth? <Outlet/> : <Navigate to="/login"/>
 }
 

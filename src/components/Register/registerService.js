@@ -1,8 +1,23 @@
+import { useNavigate } from "react-router-dom";
 
-export default function registerService() {
+export default function RegisterService() {
 
-    return{
-        
+
+    const navigate = useNavigate()
+
+    function handleRegister(e,data){
+
+        const userDate = {email:data.email,password: data.password}
+        e.preventDefault()
+        localStorage.setItem("user", JSON.stringify(userDate))
+
+        navigate("/Login")
+
     }
+
+
+
+
+    return {handleRegister}
   
 }

@@ -5,49 +5,27 @@ export default function ServiceLogin() {
 
     
   const navigate = useNavigate()
+  
+    
+  function handleSubmit(e,loginData,setSubmitMsj){
+   e.preventDefault()
+   const userData = JSON.parse(localStorage.getItem("user"))
+   
 
-   function emailValidation(email){
-        if(!/rolo@gmail.com$/.test(email))return true
-        else return false
-      }
-    
-    function passwordValidation(password){
-        if(!/^[0-9]{5}$/.test(password))return true
-        else return false
-      }
-    
+   if(userData&&loginData.email===userData.email&& loginData.password===userData.password){
       
-     function handleChange(e, setFormValues, formValues){
-    
-        const {name, value}= e.target
-        setFormValues({...formValues, [name]:value})
-    
-        
-       }
-    
-      function handleSubmit(e,setSubmitMsj){
-         e.preventDefault()
+    localStorage.setItem("userAuth","true")
 
-         if(localStorage.getItem("user")){
+    navigate("/homePage");
+  }
+   else {
            
-          navigate("/homePage");
-         }
-         else {
-           
-          setSubmitMsj(false)
-        }
-         
-
-         
-       }
-      
-
-       return{
-           emailValidation,
-           passwordValidation,
-           handleChange,
-           handleSubmit
-       }
+      setSubmitMsj(false)
+    }
+  }
+   
+    
+  return {handleSubmit}
   
 }
 

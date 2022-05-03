@@ -1,15 +1,11 @@
 .loginWrapper{
     height: 100vh;
     width: 100vw;
-    background-color: rgb(224, 228, 18);
-    position: relative;
-    
-    
 }
 
 .loginForm{
 
-    background-color: rgb(133, 128, 180);
+    background-color: rgba(133, 128, 180, .8);
     border-radius: 5px;
    
     position: absolute;
@@ -42,6 +38,12 @@
 
 @media only screen and (max-width: 400px) {
 
+    .loginWrapper{
+        background-image: url("/public/pokemon\ register.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .loginForm{
         height: 300px;
         width: 250px;
@@ -49,6 +51,13 @@
     
 }
 @media only screen and (min-width: 400px) {
+
+    .loginWrapper{
+        background-image: url("/public/loginImg2.jpg");
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .loginForm{
         height: 350px;
         width: 300px;

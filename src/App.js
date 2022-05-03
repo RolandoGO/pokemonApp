@@ -5,26 +5,32 @@ import Register from "./components/Register/Register";
 import HomePage from "./screens/HomePage/HomePage"
 import NotFound from "./components/NotFound";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import { AuthContextProvider } from "./components/context/authContext";
 
 function App() {
   return (
     <div className="App">
-      
-      <Routes>
-        <Route path="/" element ={<WelcomePage/>}/>
-        <Route path="/login" element ={<Login/>}/>
-        <Route path="/register" element ={<Register/>}/>
+      <AuthContextProvider>
+        <Routes>
+          <Route path="/" element ={<WelcomePage/>}/>
+          <Route path="/login" element ={<Login/>}/>
+          <Route path="/register" element ={<Register/>}/>
 
 
-        <Route  element={<ProtectedRoutes/>}>
-          <Route path="/homepage" element={<HomePage/>}/>
-        </Route>
+        
+            <Route  element={<ProtectedRoutes/>}>
+              
+                <Route path="/homePage" element={<HomePage/>}/>
+              
+            </Route>
+        
 
-        <Route path="*" element={<NotFound/>}/>
+          <Route path="*" element={<NotFound/>}/>
 
 
 
-      </Routes>
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
