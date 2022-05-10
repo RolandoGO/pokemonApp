@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import constants from "../../constants";
 
 export default function RegisterService() {
 
@@ -9,9 +10,11 @@ export default function RegisterService() {
 
         const userDate = {email:data.email,password: data.password}
         e.preventDefault()
+
+       
         localStorage.setItem("user", JSON.stringify(userDate))
 
-        navigate("/Login")
+        navigate(constants.loginURL)
 
     }
 

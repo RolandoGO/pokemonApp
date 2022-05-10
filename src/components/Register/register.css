@@ -30,6 +30,19 @@
     font-size: 20px;
 }
 
+.goToLogin{
+    background-image: url("../../../public/arrow-right.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 30px;
+    width: 70px;
+    border: 1px solid black;
+}
+
+.goToLogin:hover{
+    background-color: #fff;
+}
+
 .errorMsj{
     color:red;
     font-size: 20px;

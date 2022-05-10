@@ -4,6 +4,10 @@
     font-family: 'Radio Canada', sans-serif;
     
 }
+.App{
+    width: 100vw;
+    height: 100vh;
+}
 button{
     background-color: rgb(9, 35, 141);
     height: 60px;
@@ -24,3 +28,7 @@ button:active{
 
 }
 
+.errMsj{
+    color: red;
+    font-weight: bold;
+}

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import serviceLogin from './ServiceLogin'
 import LoginRegisterService from '../../service/LoginRegisterService'
+import constants from '../../constants'
 import "./login.css"
 
 
@@ -28,17 +29,17 @@ export default function Login() {
 
       <form className='loginForm' onSubmit={(e)=>handleSubmit(e ,formValues, setSubmitMsj)}>
 
-        <input name={"email"} type={"email"} onChange={(e)=>handleChange(e,formValues,setFormValues)} required></input>
+        <input autoComplete='' name={"email"} type={"email"} onChange={(e)=>handleChange(e,formValues,setFormValues)} required></input>
         {emailErrVali}
 
-        <input name ={"password"} type={"password"}  onChange={(e)=>handleChange(e, formValues, setFormValues)} required></input>
+        <input autoComplete='' name ={"password"} type={"password"}  onChange={(e)=>handleChange(e, formValues, setFormValues)} required></input>
         {passwordErrVali}
 
         <button disabled={btnDisable}>Login</button>
 
         {loginErrMsj}
 
-        <Link to={"/register"}>Register</Link>
+        <Link to={constants.registerURL}>Register</Link>
       </form>
       
     </div>

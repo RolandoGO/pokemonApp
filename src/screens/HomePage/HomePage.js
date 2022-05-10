@@ -1,21 +1,27 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
+import React, { useState } from 'react'
+import PokemonDisplay from './homePageComponents/PokemonDisplay'
+import HomeHeader from './homePageComponents/HomeHeader'
+import "./homePage.css"
 
 
 export default function HomePage() {
 
-  const navigate = useNavigate()
-
-  function handleLogout(){
-    
-    localStorage.clear()
-    navigate("/login")
-  }
+  
+  const [pokemonRange, setPokemonRange] = useState({start:1,end:5})
+  const [pokemonData, setPokemonData] = useState([])
+  const [errMsj, setErrMsj] = useState("")
+  
+  
+  
   
   return (
-    <div>HomePage
+    <div className='pokemonContainer'>
+     
+    <HomeHeader data ={{pokemonRange,setPokemonRange,setPokemonData,errMsj,setErrMsj}}/>
+      
 
-      <button onClick={handleLogout}>Log Out</button>
+      <PokemonDisplay pokemonData={pokemonData}/>
+      
     </div>
    
   )
